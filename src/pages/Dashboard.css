@@ -1,0 +1,23 @@
+/**
+ * Dashboard 頁面樣式
+ */
+
+.see-all {
+  font-size: 14px;
+  color: var(--primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.see-all:hover {
+  background: rgba(255, 138, 91, 0.1);
+}
+
+.month-selector button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

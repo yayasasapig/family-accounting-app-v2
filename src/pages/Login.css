@@ -1,0 +1,91 @@
+/**
+ * 登入頁面樣式
+ */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FF8A5B 0%, #FFD166 100%);
+  padding: 20px;
+}
+
+.login-container {
+  background: white;
+  border-radius: 24px;
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(26, 43, 74, 0.15);
+  max-width: 380px;
+  width: 100%;
+}
+
+.logo {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.login-container h1 {
+  color: #1A2B4A;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.slogan {
+  color: #4A5568;
+  font-size: 16px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 24px;
+  background: white;
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A2B4A;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.google-btn:hover:not(:disabled) {
+  background: #F7F8FA;
+  border-color: #FF8A5B;
+  transform: translateY(-2px);
+}
+
+.google-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.google-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-loading {
+  font-size: 14px;
+  color: #4A5568;
+}
+
+.error-msg {
+  color: #EF4444;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.footer {
+  margin-top: 32px;
+  font-size: 12px;
+  color: #4A5568;
+}

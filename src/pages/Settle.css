@@ -1,0 +1,157 @@
+/**
+ * Settle 頁面樣式
+ */
+
+/* Settlement Card */
+.settle-card {
+  background: white;
+  margin: 16px;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(26, 43, 74, 0.06);
+}
+
+.settle-header {
+  margin-bottom: 20px;
+}
+
+.settle-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* Persons */
+.settle-persons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 24px;
+}
+
+.person-box {
+  text-align: center;
+  flex: 1;
+}
+
+.person-avatar {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.person-name {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 4px;
+}
+
+.person-amount {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--danger);
+}
+
+.person-label {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.vs-divider {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray);
+  padding: 0 16px;
+}
+
+/* Settlement Result */
+.settle-result {
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--light);
+}
+
+.settle-result.partner {
+  background: #D1FAE5;
+}
+
+.settle-result.you {
+  background: #FEE2E2;
+}
+
+.settle-result.equal {
+  background: #FEF3C7;
+}
+
+.result-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.result-text {
+  font-size: 16px;
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+.result-text strong {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Settle Action */
+.settle-action {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.settle-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--success);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.settle-btn:hover {
+  background: #16A34A;
+  transform: translateY(-2px);
+}
+
+/* Settle List Section */
+.settle-list-section {
+  margin: 16px;
+}
+
+.record-count {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+/* Tips */
+.settle-tips {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 16px;
+  padding: 16px;
+  background: #FEF3C7;
+  border-radius: 12px;
+}
+
+.tips-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.tips-text {
+  font-size: 14px;
+  color: var(--dark);
+  line-height: 1.5;
+}

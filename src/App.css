@@ -1,0 +1,509 @@
+/**
+ * 全域樣式
+ * 
+ * 設計規範：
+ * - 主色：#FF8A5B
+ * - 收入綠：#22C55E
+ * - 支出紅：#EF4444
+ * - 深夜藍：#1A2B4A
+ * - 圓角卡片：16px
+ * - Tab Bar 底部固定
+ */
+
+:root {
+  --primary: #FF8A5B;
+  --primary-dark: #E67648;
+  --success: #22C55E;
+  --danger: #EF4444;
+  --warning: #F59E0B;
+  --info: #3B82F6;
+  --dark: #1A2B4A;
+  --gray: #4A5568;
+  --light: #F7F8FA;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--light);
+  min-height: 100vh;
+  padding-bottom: 80px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, textarea {
+  font-family: inherit;
+}
+
+/* ==========================================
+   通用容器
+   ========================================== */
+
+.page-container {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* ==========================================
+   Header
+   ========================================== */
+
+.header {
+  background: var(--primary);
+  color: white;
+  padding: 20px;
+  border-radius: 0 0 24px 24px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.month-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.month-selector button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.month-selector button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   Summary Cards
+   ========================================== */
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(26, 43, 74, 0.06);
+}
+
+.summary-card.income {
+  border-left: 4px solid var(--success);
+}
+
+.summary-card.expense {
+  border-left: 4px solid var(--danger);
+}
+
+.summary-label {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 4px;
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.summary-value.income { color: var(--success); }
+.summary-value.expense { color: var(--danger); }
+
+.summary-card.balance {
+  grid-column: span 2;
+  border-left: 4px solid var(--primary);
+  text-align: center;
+}
+
+.summary-card.balance .summary-value {
+  color: var(--dark);
+  font-size: 32px;
+}
+
+/* ==========================================
+   Budget Section
+   ========================================== */
+
+.budget-section {
+  background: white;
+  margin: 0 16px 16px;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(26, 43, 74, 0.06);
+}
+
+.budget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.budget-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.budget-amount {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.budget-bar {
+  height: 12px;
+  background: var(--light);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.budget-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--success), var(--warning));
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.budget-fill.warning {
+  background: linear-gradient(90deg, var(--warning), var(--danger));
+}
+
+/* ==========================================
+   Transactions
+   ========================================== */
+
+.transactions-section {
+  margin: 16px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.see-all {
+  font-size: 14px;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.transaction-list {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(26, 43, 74, 0.06);
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--light);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-item:hover {
+  background: #FAFAFA;
+}
+
+.transaction-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.icon-food { background: #FEF3C7; }
+.icon-transport { background: #DBEAFE; }
+.icon-shopping { background: #FCE7F3; }
+.icon-salary { background: #D1FAE5; }
+.icon-medical { background: #FEE2E2; }
+.icon-entertainment { background: #E9D5FF; }
+.icon-rent { background: #C7D2FE; }
+.icon-other { background: #E5E7EB; }
+
+.transaction-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-category {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transaction-date {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.transaction-amount {
+  font-size: 16px;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.transaction-amount.income { color: var(--success); }
+.transaction-amount.expense { color: var(--danger); }
+
+/* ==========================================
+   FAB Button
+   ========================================== */
+
+.fab {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  width: 56px;
+  height: 56px;
+  background: var(--primary);
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  box-shadow: 0 4px 16px rgba(255, 138, 91, 0.4);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: none;
+  z-index: 50;
+}
+
+.fab:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255, 138, 91, 0.5);
+}
+
+/* ==========================================
+   Tab Bar
+   ========================================== */
+
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--gray);
+  font-size: 11px;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: all 0.15s ease;
+}
+
+.tab-item.active {
+  color: var(--primary);
+}
+
+.tab-item:hover {
+  background: rgba(255, 138, 91, 0.08);
+}
+
+.tab-item .icon {
+  font-size: 22px;
+}
+
+.tab-item.add {
+  position: relative;
+}
+
+.tab-item.add .icon {
+  background: var(--primary);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(255, 138, 91, 0.4);
+  margin-top: -22px;
+}
+
+/* ==========================================
+   Toast
+   ========================================== */
+
+.toast {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+/* ==========================================
+   Loading Spinner
+   ========================================== */
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 16px;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--light);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* ==========================================
+   Empty State
+   ========================================== */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.empty-state .icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.empty-state .title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.empty-state .desc {
+  font-size: 14px;
+  color: var(--gray);
+}
